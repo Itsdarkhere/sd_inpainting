@@ -97,7 +97,7 @@ class Predictor(BasePredictor):
         generator = torch.Generator("cuda").manual_seed(seed)
 
         # Make a schedualer
-        self.pipe.scheduler = make_scheduler(scheduler, pipeline.scheduler.config)
+        self.pipe.scheduler = make_scheduler(scheduler, self.pipe.scheduler.config)
 
         output = self.pipe(
             prompt=[prompt] * num_outputs if prompt is not None else None,
