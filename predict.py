@@ -2,7 +2,15 @@ import os
 from typing import List
 
 import torch
-from diffusers import StableDiffusionInpaintPipeline
+from diffusers import (
+    StableDiffusionInpaintPipeline,
+    PNDMScheduler,
+    LMSDiscreteScheduler,
+    DDIMScheduler,
+    EulerDiscreteScheduler,
+    EulerAncestralDiscreteScheduler,
+    DPMSolverMultistepScheduler,
+)
 
 from PIL import Image
 from cog import BasePredictor, Input, Path
